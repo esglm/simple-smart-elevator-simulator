@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Smart Elevator Simulator</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+	<nav class="navbar navbar-default row">
+		<div class="container-fluid col-xs-12">
+			<div class="navbar-header col-xs-12" style="text-align: center">
+				<a class="navbar-brand col-xs-12" href="index.html">
+					Simple Smart Elevator Simulator
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="jumbotron row" style="width:90%; margin-left:5%;">
+
+		<div class="elevator-box col-xs-3 row">
+			<div class="col-xs-12">
+				<div class="col-xs-6">
+					<img id="elevator1" src="img/closed.jpg">
+				</div>
+				<div class="col-xs-6" >
+					<div class="col-xs-6">
+						<button id="elevator1-button1" class="btn btn-sm btn-info" onclick="addTarget(1, 1)">1</button>
+						<button id="elevator1-button3" class="btn btn-sm btn-info" onclick="addTarget(1, 3)">3</button>
+						<button id="elevator1-button5" class="btn btn-sm btn-info" onclick="addTarget(1, 5)">5</button>
+					</div>
+					<div class="col-xs-6">
+						<button id="elevator1-button2" class="btn btn-sm btn-info" onclick="addTarget(1, 2)">2</button>
+						<button id="elevator1-button4" class="btn btn-sm btn-info" onclick="addTarget(1, 4)">4</button>
+						<button id="elevator1-button6" class="btn btn-sm btn-info" onclick="addTarget(1, 6)">6</button>
+					</div>
+					<button id="elevator1-toggle-door-button" class="col-xs-12 btn btn-md btn-success">Toggle Door</button>
+					<div class="col-xs-12">
+						<div class="col-xs-6"><p id="elevator1-floor-indicator">1</p></div>
+						<div class="col-xs-6"><p id="elevator1-status-indicator">&#10003;</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+					<center>
+						<button type="button" class="btn btn-warning btn-md" onclick="toggleMaintenanceMode(1)">
+							Toggle Maintenance Mode
+						</button>
+					</center>
+			</div>
+		</div>
+
+		<div class="elevator-box col-xs-3 row">
+			<div class="col-xs-12">
+				<div class="col-xs-6">
+					<img id="elevator2" src="img/closed.jpg">
+				</div>
+				<div class="col-xs-6" >
+					<div class="col-xs-6">
+						<button id="elevator2-button1" class="btn btn-sm btn-info" onclick="addTarget(2, 1)">1</button>
+						<button id="elevator2-button3" class="btn btn-sm btn-info" onclick="addTarget(2, 3)">3</button>
+						<button id="elevator2-button5" class="btn btn-sm btn-info" onclick="addTarget(2, 5)">5</button>
+					</div>
+					<div class="col-xs-6">
+						<button id="elevator2-button2" class="btn btn-sm btn-info" onclick="addTarget(2, 2)">2</button>
+						<button id="elevator2-button4" class="btn btn-sm btn-info" onclick="addTarget(2, 4)">4</button>
+						<button id="elevator2-button6" class="btn btn-sm btn-info" onclick="addTarget(2, 6)">6</button>
+					</div>
+					<button id="elevator2-toggle-door-button" class="col-xs-12 btn btn-md btn-success">Toggle Door</button>
+					<div class="col-xs-12">
+						<div class="col-xs-6"><p id="elevator2-floor-indicator">1</p></div>
+						<div class="col-xs-6"><p id="elevator2-status-indicator">&#10003;</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<center>
+					<button type="button" class="btn btn-warning btn-md" onclick="toggleMaintenanceMode(2)">
+						Toggle Maintenance Mode
+					</button>
+				</center>
+			</div>
+		</div>
+
+		<div class="elevator-box col-xs-3 row">
+			<div class="col-xs-12">
+				<div class="col-xs-6">
+					<img id="elevator3" src="img/closed.jpg">
+				</div>
+				<div class="col-xs-6" >
+					<div class="col-xs-6">
+						<button id="elevator3-button1" class="btn btn-sm btn-info" onclick="addTarget(3, 1)">1</button>
+						<button id="elevator3-button3" class="btn btn-sm btn-info" onclick="addTarget(3, 3)">3</button>
+						<button id="elevator3-button5" class="btn btn-sm btn-info" onclick="addTarget(3, 5)">5</button>
+					</div>
+					<div class="col-xs-6">
+						<button id="elevator3-button2" class="btn btn-sm btn-info" onclick="addTarget(3, 2)">2</button>
+						<button id="elevator3-button4" class="btn btn-sm btn-info" onclick="addTarget(3, 4)">4</button>
+						<button id="elevator3-button6" class="btn btn-sm btn-info" onclick="addTarget(3, 6)">6</button>
+					</div>
+					<button id="elevator3-toggle-door-button" class="col-xs-12 btn btn-md btn-success">Toggle Door</button>
+					<div class="col-xs-12">
+						<div class="col-xs-6"><p id="elevator3-floor-indicator">1</p></div>
+						<div class="col-xs-6"><p id="elevator3-status-indicator">&#10003;</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<center>
+					<button type="button" class="btn btn-warning btn-md" onclick="toggleMaintenanceMode(3)">
+						Toggle Maintenance Mode
+					</button>
+				</center>
+			</div>
+		</div>
+
+		<div class="elevator-box col-xs-3 row">
+			<div class="col-xs-12">
+				<div class="col-xs-6">
+					<img id="elevator4" src="img/closed.jpg">
+				</div>
+				<div class="col-xs-6" >
+					<div class="col-xs-6">
+						<button id="elevator4-button1" class="btn btn-sm btn-info" onclick="addTarget(4, 1)">1</button>
+						<button id="elevator4-button3" class="btn btn-sm btn-info" onclick="addTarget(4, 3)">3</button>
+						<button id="elevator4-button5" class="btn btn-sm btn-info" onclick="addTarget(4, 5)">5</button>
+					</div>
+					<div class="col-xs-6">
+						<button id="elevator4-button2" class="btn btn-sm btn-info" onclick="addTarget(4, 2)">2</button>
+						<button id="elevator4-button4" class="btn btn-sm btn-info" onclick="addTarget(4, 4)">4</button>
+						<button id="elevator4-button6" class="btn btn-sm btn-info" onclick="addTarget(4, 6)">6</button>
+					</div>
+					<button id="elevator4-toggle-door-button" class="col-xs-12 btn btn-md btn-success">Toggle Door</button>
+					<div class="col-xs-12">
+						<div class="col-xs-6"><p id="elevator4-floor-indicator">1</p></div>
+						<div class="col-xs-6"><p id="elevator4-status-indicator">&#10003;</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12">
+						<center>
+							<button type="button" class="btn btn-warning btn-md" onclick="toggleMaintenanceMode(4)">
+								Toggle Maintenance Mode
+							</button>
+						</center>
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<br/><br/>
+			<p id="alert">Doors must be closed manually for moving the elevator.</p>
+		</div>
+	</div>
+
+	<div class="jumbotron row" style="width:90%; margin-left:5%;">
+		<div class="col-xs-8 col-xs-offset-2">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Floors</th>
+						<th>External Buttons</th>
+						<th>Assigned Elevator</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="success">
+						<td>1th Floor</td>
+						<td><button class="btn btn-info" onclick="callElevator(1)">Call</button></td>
+						<td><span id="call1"></span></td>
+					</tr>
+					<tr>
+						<td>2nd Floor</td>
+						<td><button class="btn btn-info" onclick="callElevator(2)">Call</button></td>
+						<td><span id="call2"></span></td>
+					</tr>
+					<tr class="danger">
+						<td>3rd Floor</td>
+						<td><button class="btn btn-info" onclick="callElevator(3)">Call</button></td>
+						<td><span id="call3"></span></td>
+					</tr>
+					<tr class="info">
+						<td>4th Floor</td>
+						<td><button class="btn btn-info" onclick="callElevator(4)">Call</button></td>
+						<td><span id="call4"></span></td>
+					</tr>
+					<tr class="warning">
+						<td>5th Floor</td>
+						<td><button class="btn btn-info" onclick="callElevator(5)">Call</button></td>
+						<td><span id="call5"></span></td>
+					</tr>
+					<tr class="active">
+						<td>6th Floor</td>
+						<td><button class="btn btn-info" onclick="callElevator(6)">Call</button></td>
+						<td><span id="call6"></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="js/vendor/watch.js" ></script>
+	<!-- <script type="text/javascript" src="js/vendor/bootstrap.min.js" ></script> -->
+	<script type="text/javascript" src="js/vendor/jquery-3.2.1.min.js" ></script>
+
+	<script type="text/javascript" src="js/utils.js" ></script>
+	<script type="text/javascript" src="js/elevator.js" ></script>
+	<script type="text/javascript" src="js/app.js" ></script>
+	<script type="text/javascript" src="js/listeners.js" ></script>
+</body>
+</html>

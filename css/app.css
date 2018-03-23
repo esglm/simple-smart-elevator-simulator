@@ -1,0 +1,35 @@
+button{
+	margin-bottom: 4px !important;
+}
+
+.red-button, .red-button:focus {
+	background-color: red;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+	font-size: 35px !important;
+}
+
+.elevator-box {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+#a1, #a2, #a3, #a4 {
+	vertical-align: middle;
+}
+
+#alert {
+	text-align: center;
+	font-size: 100% !important;
+}
+
+table {
+	text-align: center;
+	text-align-last: center;
+}
