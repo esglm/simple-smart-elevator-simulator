@@ -1,5 +1,7 @@
 ## ![](https://user-images.githubusercontent.com/12038074/37601358-e0d99050-2b9a-11e8-9431-3669616c512a.png) Simple Smart Elavator Simulator
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/6dc638106a9e02eb6375/maintainability)](https://codeclimate.com/github/esglm/simple-smart-elevator-simulator/maintainability)
+
 Multiple smart elevators system that can run as cost-efficient with decision making mechanism.
 
 ### Requirements
